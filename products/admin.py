@@ -6,3 +6,11 @@ from .models import *
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["productName", "price", "category"]
     search_fields = ['productName', 'category']
+
+@admin.register(Favorite)
+class FavoriteAdmin(admin.ModelAdmin):
+    list_display = ["productName", "price", "date_added"]
+
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    list_display = ["productName", "price", "category", "date_added"]
